@@ -1,0 +1,8 @@
+.pylint.d/
+__pycache__/
+*.bat
+tester.py
+test.html
+index.html
+demo.html
+*.py

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generic Groundhog Game</title>
+
+  <script
+    type="text/javascript"
+    src="brython.js">
+  </script>
+
+  <script
+    type="text/javascript"
+    src="brython_stdlib.js">
+  </script>
+
+  <script 
+    type="text/javascript" 
+    src="UI.brython.js">
+  </script>
+  
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+  <body onload="brython(1)">
+
+    <style>
+    body {
+        /* background-color: yellow; */
+        background-image: url(https://images.unsplash.com/photo-1573196872258-41425124bf5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+/*         background-repeat: no-repeat; */
+    }
+    </style>
+
+    <script type="text/python">
+      import time  
+      from browser import document
+      from browser import html, window
+      from browser import timer
+      from browser import console
+      import UI
+      import Player
+
+    
+
+
+      def update():
+          global player
+          player.update()
+          UI.update_UI(player)
+          timer.set_timeout(update, 100)
+        
+      player= Player.Player(document)
+      UI.create_UI(player)
+      update()
+      
+    
+
+
+    </script>
+  </body>
+</html>
